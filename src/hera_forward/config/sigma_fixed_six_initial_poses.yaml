@@ -1,0 +1,76 @@
+# Live measured initial poses; units: metres and radians.
+# Six fronts point east; small yaw/position differences are measured settling offsets.
+schema_version: 1
+record_type: measured_scene_snapshot
+description: 'Current six MiddleUGV initial poses; cumulative translation from original
+  fixed layout: west 125 m, south 30 m. Vehicle fronts point east.'
+captured_at_utc: '2026-11-25T08:08:42.3504997Z'
+coordinate_system: ENU
+position_unit: m
+yaw_unit: rad
+axis_convention:
+  x: east
+  y: north
+  z: up
+yaw_convention: 0 = east; positive counterclockwise towards north; range [0, 2*pi)
+home_origin:
+  latitude_deg: 22.565657
+  longitude_deg: 121.876533
+  altitude_m: 0.0
+model_name: MiddleUGV
+model_type: 4
+camp_id: 0
+squad_id: 0
+vehicles:
+- name: ugv1
+  model_id: 1
+  entity_id: 1125899906842625
+  x_m: -103.001866
+  y_m: 3.997987
+  z_m: 0.002084
+  yaw_rad: 0.000867695
+- name: ugv2
+  model_id: 2
+  entity_id: 1125899906842626
+  x_m: -116.989169
+  y_m: 0.000446
+  z_m: 0.001846
+  yaw_rad: 0.000241871
+- name: ugv3
+  model_id: 3
+  entity_id: 1125899906842627
+  x_m: -126.996143
+  y_m: 12.004523
+  z_m: 0.001646
+  yaw_rad: 0.000216901
+- name: ugv4
+  model_id: 4
+  entity_id: 1125899906842628
+  x_m: -122.007918
+  y_m: 26.998406
+  z_m: 0.001696
+  yaw_rad: 0.000328449
+- name: ugv5
+  model_id: 5
+  entity_id: 1125899906842629
+  x_m: -106.992171
+  y_m: 29.988219
+  z_m: 0.00195
+  yaw_rad: 6.282108081
+- name: ugv6
+  model_id: 6
+  entity_id: 1125899906842630
+  x_m: -96.995471
+  y_m: 19.002945
+  z_m: 0.00215
+  yaw_rad: 0.001131867
+provenance:
+  source: Live SigmaPI UDP ORIGIN + MODEL_INFO readback
+  windows_host: DESKTOP-C6MF4F8
+  raw_snapshot: /home/cyz/hera_swarm_ws/artifacts/sigma_fixed_startup_20261125_west125_south30/retry/stationary_snapshot.json
+  raw_snapshot_sha256: 4ecf5e6a2419fadbe5f5e18587206718e8a97a1d3e3d3f710e607740a2c85afa
+  capture_started_utc: '2026-11-25T08:08:39.1086406Z'
+  sample_max_age_s: 0.25412809999999997
+  max_reported_speed_mps: 0.001038599901955853
+  conversion: Existing sigmainterface geo::llaToEnu and yaw_conv::ueDegToEnuRad; same
+    conversion as onModelInfo
