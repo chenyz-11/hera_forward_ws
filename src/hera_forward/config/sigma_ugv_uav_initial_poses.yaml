@@ -1,8 +1,8 @@
-# Live initial poses; model generation only, no aircraft height control.
+# Live BigUAV ENU metre snapshot; other model entries retain their earlier provenance.
 schema_version: 1
 scene_name: ugv_uav
 record_type: measured_scene_snapshot
-captured_at_utc: '2026-11-25T09:11:25.2145259Z'
+captured_at_utc: '2026-11-25T21:22:03.6196061Z'
 coordinate_system: ENU
 position_unit: m
 yaw_unit: rad
@@ -29,13 +29,7 @@ groups:
   - ugv4
   - ugv5
   - ugv6
-  uav:
-  - uav1
-  - uav2
-  - uav3
-  - uav4
-  - uav5
-  - uav6
+  uav: []
 vehicles:
 - name: ugv1
   model_name: MiddleUGV
@@ -44,10 +38,10 @@ vehicles:
   squad_id: 0
   model_id: 1
   entity_id: 1125899906842625
-  x_m: 22.009342
+  x_m: 21.978488
   y_m: 33.996577
   z_m: 0.00278
-  yaw_rad: 0.000580415
+  yaw_rad: 0.002018195
 - name: ugv2
   model_name: MiddleUGV
   model_type: 4
@@ -55,10 +49,10 @@ vehicles:
   squad_id: 0
   model_id: 2
   entity_id: 1125899906842626
-  x_m: 8.001529
+  x_m: 7.98096
   y_m: 29.998922
   z_m: 0.002833
-  yaw_rad: 0.001451154
+  yaw_rad: 0.001610223
 - name: ugv3
   model_name: MiddleUGV
   model_type: 4
@@ -69,7 +63,7 @@ vehicles:
   x_m: -2.005523
   y_m: 42.002918
   z_m: 0.00277
-  yaw_rad: 0.002302405
+  yaw_rad: 0.002102108
 - name: ugv4
   model_name: MiddleUGV
   model_type: 4
@@ -80,7 +74,7 @@ vehicles:
   x_m: 2.992855
   y_m: 56.996842
   z_m: 0.002654
-  yaw_rad: 0.001351379
+  yaw_rad: 0.00154177
 - name: ugv5
   model_name: MiddleUGV
   model_type: 4
@@ -88,10 +82,10 @@ vehicles:
   squad_id: 0
   model_id: 5
   entity_id: 1125899906842629
-  x_m: 18.008548
+  x_m: 17.998263
   y_m: 59.997852
   z_m: 0.002602
-  yaw_rad: 0.001844934
+  yaw_rad: 0.000905248
 - name: ugv6
   model_name: MiddleUGV
   model_type: 4
@@ -99,75 +93,75 @@ vehicles:
   squad_id: 0
   model_id: 6
   entity_id: 1125899906842630
-  x_m: 27.984748
+  x_m: 27.974464
   y_m: 49.001585
   z_m: 0.00266
-  yaw_rad: 0.000902851
+  yaw_rad: 0.002439113
 - name: uav1
-  model_name: MiddleUav
-  model_type: 1
+  model_name: BigUAV
+  model_type: 0
   camp_id: 0
   squad_id: 0
   model_id: 1
-  entity_id: 281474976710657
-  x_m: -3.003144
-  y_m: 33.985488
-  z_m: 0.048543
+  entity_id: 1
+  x_m: -3.003146
+  y_m: 33.985515
+  z_m: 4.996641
   yaw_rad: -0.0
 - name: uav2
-  model_name: MiddleUav
-  model_type: 1
+  model_name: BigUAV
+  model_type: 0
   camp_id: 0
   squad_id: 0
   model_id: 2
-  entity_id: 281474976710658
-  x_m: -17.000679
-  y_m: 29.987856
-  z_m: 0.048513
+  entity_id: 2
+  x_m: -17.000692
+  y_m: 29.98788
+  z_m: 4.996653
   yaw_rad: -0.0
 - name: uav3
-  model_name: MiddleUav
-  model_type: 1
+  model_name: BigUAV
+  model_type: 0
   camp_id: 0
   squad_id: 0
   model_id: 3
-  entity_id: 281474976710659
-  x_m: -26.997427
-  y_m: 41.991868
-  z_m: 0.048383
+  entity_id: 3
+  x_m: -26.997448
+  y_m: 41.991901
+  z_m: 4.996634
   yaw_rad: -0.0
 - name: uav4
-  model_name: MiddleUav
-  model_type: 1
+  model_name: BigUAV
+  model_type: 0
   camp_id: 0
   squad_id: 0
   model_id: 4
-  entity_id: 281474976710660
-  x_m: -21.999025
-  y_m: 56.985784
-  z_m: 0.048257
+  entity_id: 4
+  x_m: -21.999042
+  y_m: 56.985829
+  z_m: 4.996635
   yaw_rad: -0.0
 - name: uav5
-  model_name: MiddleUav
-  model_type: 1
+  model_name: BigUAV
+  model_type: 0
   camp_id: 0
   squad_id: 0
   model_id: 5
-  entity_id: 281474976710661
-  x_m: -7.003896
-  y_m: 59.98677
-  z_m: 0.048233
+  entity_id: 5
+  x_m: -7.003901
+  y_m: 59.986817
+  z_m: 4.996621
   yaw_rad: -0.0
 - name: uav6
-  model_name: MiddleUav
-  model_type: 1
+  model_name: BigUAV
+  model_type: 0
   camp_id: 0
   squad_id: 0
   model_id: 6
-  entity_id: 281474976710662
-  x_m: 2.992856
-  y_m: 48.990486
-  z_m: 0.0483
+  entity_id: 6
+  x_m: 2.992859
+  y_m: 48.990524
+  z_m: 4.996613
   yaw_rad: -0.0
 nominal_spawn_poses:
 - name: ugv1
@@ -213,42 +207,42 @@ nominal_spawn_poses:
   z_m: 0.0
   yaw_rad: 0.0
 - name: uav1
-  model_name: MiddleUav
+  model_name: BigUAV
   model_id: 1
   x_m: -3.0
   y_m: 34.0
   z_m: 0.0
   yaw_rad: 0.0
 - name: uav2
-  model_name: MiddleUav
+  model_name: BigUAV
   model_id: 2
   x_m: -17.0
   y_m: 30.0
   z_m: 0.0
   yaw_rad: 0.0
 - name: uav3
-  model_name: MiddleUav
+  model_name: BigUAV
   model_id: 3
   x_m: -27.0
   y_m: 42.0
   z_m: 0.0
   yaw_rad: 0.0
 - name: uav4
-  model_name: MiddleUav
+  model_name: BigUAV
   model_id: 4
   x_m: -22.0
   y_m: 57.0
   z_m: 0.0
   yaw_rad: 0.0
 - name: uav5
-  model_name: MiddleUav
+  model_name: BigUAV
   model_id: 5
   x_m: -7.0
   y_m: 60.0
   z_m: 0.0
   yaw_rad: 0.0
 - name: uav6
-  model_name: MiddleUav
+  model_name: BigUAV
   model_id: 6
   x_m: 3.0
   y_m: 49.0
@@ -256,8 +250,17 @@ nominal_spawn_poses:
   yaw_rad: 0.0
 provenance:
   source: Live SigmaPI ORIGIN + MODEL_INFO readback
-  raw_snapshot: /home/cyz/hera_swarm_ws/artifacts/sigma_ugv_uav_startups_20261125/ugv_uav_final_probe.json
-  raw_snapshot_sha256: e49e641a55e7101240cef9f57464e73e6508b1efb0121ffd4d45d73feff04557
-  max_receipt_age_s: 0.2614348999999998
+  raw_snapshot: /home/cyz/hera_swarm_ws/artifacts/sigma_biguav_startups_20261126/ugv_uav_final_probe.json
+  raw_snapshot_sha256: 4400564a8abbde2d69d14913aba1271f931ca5e595f5ad6e92699a31c1ef6012
+  max_receipt_age_s: 0.15496670000000012
   conversion: sigmainterface geo::llaToEnu and yaw_conv::ueDegToEnuRad, same as bridge
-  original_ugv_source: /home/cyz/hera_swarm_ws/artifacts/sigma_ugv_uav_startups_20261125/original_windows_scene.json
+  original_ugv_source: /home/cyz/hera_swarm_ws/artifacts/sigma_biguav_startups_20261126/original_windows_scene.json
+uav_snapshot_refresh:
+  captured_at_utc: '2026-11-26T06:49:43Z'
+  source: /home/cyz/hera_swarm_ws/artifacts/sigma_uav_motion_fix_20261126/initial_snapshot_retry/snapshot.json
+  method: query-only via corrected installed sigma2ros_bridge; no motion/takeoff/height
+    command publishers
+  model_info_altitude_unit: metres for current BigUAV model_type=0; legacy cm conversion
+    was incorrect
+  biguav_altitude_scale_m: 1.0
+  other_vehicle_entries: unchanged

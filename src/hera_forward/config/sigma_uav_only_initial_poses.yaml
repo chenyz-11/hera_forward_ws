@@ -1,8 +1,8 @@
-# Live initial poses; model generation only, no aircraft height control.
+# Live BigUAV ENU metre snapshot; other model entries retain their earlier provenance.
 schema_version: 1
 scene_name: uav_only
 record_type: measured_scene_snapshot
-captured_at_utc: '2026-11-25T09:09:55.2587075Z'
+captured_at_utc: '2026-11-26T06:49:43Z'
 coordinate_system: ENU
 position_unit: m
 yaw_unit: rad
@@ -23,118 +23,112 @@ aircraft_height_control: none; model spawn only; no takeoff, hold, height limit 
   flight command
 groups:
   ugv: []
-  uav:
-  - uav1
-  - uav2
-  - uav3
-  - uav4
-  - uav5
-  - uav6
+  uav: []
 vehicles:
 - name: uav1
-  model_name: MiddleUav
-  model_type: 1
+  model_name: BigUAV
+  model_type: 0
   camp_id: 0
   squad_id: 0
   model_id: 1
-  entity_id: 281474976710657
-  x_m: -3.003144
-  y_m: 33.985488
-  z_m: 0.048707
+  entity_id: 1
+  x_m: -3.003146
+  y_m: 33.985515
+  z_m: 4.996641
   yaw_rad: -0.0
 - name: uav2
-  model_name: MiddleUav
-  model_type: 1
+  model_name: BigUAV
+  model_type: 0
   camp_id: 0
   squad_id: 0
   model_id: 2
-  entity_id: 281474976710658
-  x_m: -17.000679
-  y_m: 29.987856
-  z_m: 0.048678
+  entity_id: 2
+  x_m: -17.000692
+  y_m: 29.98788
+  z_m: 4.996653
   yaw_rad: -0.0
 - name: uav3
-  model_name: MiddleUav
-  model_type: 1
+  model_name: BigUAV
+  model_type: 0
   camp_id: 0
   squad_id: 0
   model_id: 3
-  entity_id: 281474976710659
-  x_m: -26.997427
-  y_m: 41.991868
-  z_m: 0.048551
+  entity_id: 3
+  x_m: -26.997448
+  y_m: 41.991901
+  z_m: 4.996634
   yaw_rad: -0.0
 - name: uav4
-  model_name: MiddleUav
-  model_type: 1
+  model_name: BigUAV
+  model_type: 0
   camp_id: 0
   squad_id: 0
   model_id: 4
-  entity_id: 281474976710660
-  x_m: -21.999025
-  y_m: 56.985784
-  z_m: 0.048427
+  entity_id: 4
+  x_m: -21.999042
+  y_m: 56.985829
+  z_m: 4.996635
   yaw_rad: -0.0
 - name: uav5
-  model_name: MiddleUav
-  model_type: 1
+  model_name: BigUAV
+  model_type: 0
   camp_id: 0
   squad_id: 0
   model_id: 5
-  entity_id: 281474976710661
-  x_m: -7.003896
-  y_m: 59.98677
-  z_m: 0.048406
+  entity_id: 5
+  x_m: -7.003901
+  y_m: 59.986817
+  z_m: 4.996621
   yaw_rad: -0.0
 - name: uav6
-  model_name: MiddleUav
-  model_type: 1
+  model_name: BigUAV
+  model_type: 0
   camp_id: 0
   squad_id: 0
   model_id: 6
-  entity_id: 281474976710662
-  x_m: 2.992856
-  y_m: 48.990486
-  z_m: 0.048475
+  entity_id: 6
+  x_m: 2.992859
+  y_m: 48.990524
+  z_m: 4.996613
   yaw_rad: -0.0
 nominal_spawn_poses:
 - name: uav1
-  model_name: MiddleUav
+  model_name: BigUAV
   model_id: 1
   x_m: -3.0
   y_m: 34.0
   z_m: 0.0
   yaw_rad: 0.0
 - name: uav2
-  model_name: MiddleUav
+  model_name: BigUAV
   model_id: 2
   x_m: -17.0
   y_m: 30.0
   z_m: 0.0
   yaw_rad: 0.0
 - name: uav3
-  model_name: MiddleUav
+  model_name: BigUAV
   model_id: 3
   x_m: -27.0
   y_m: 42.0
   z_m: 0.0
   yaw_rad: 0.0
 - name: uav4
-  model_name: MiddleUav
+  model_name: BigUAV
   model_id: 4
   x_m: -22.0
   y_m: 57.0
   z_m: 0.0
   yaw_rad: 0.0
 - name: uav5
-  model_name: MiddleUav
+  model_name: BigUAV
   model_id: 5
   x_m: -7.0
   y_m: 60.0
   z_m: 0.0
   yaw_rad: 0.0
 - name: uav6
-  model_name: MiddleUav
+  model_name: BigUAV
   model_id: 6
   x_m: 3.0
   y_m: 49.0
@@ -142,8 +136,17 @@ nominal_spawn_poses:
   yaw_rad: 0.0
 provenance:
   source: Live SigmaPI ORIGIN + MODEL_INFO readback
-  raw_snapshot: /home/cyz/hera_swarm_ws/artifacts/sigma_ugv_uav_startups_20261125/uav_only_final_probe.json
-  raw_snapshot_sha256: 00883e8b00b301971703ce8f2b9a964e447b4120f63183f75fcf025a297d322e
-  max_receipt_age_s: 0.2695053999999999
+  raw_snapshot: /home/cyz/hera_swarm_ws/artifacts/sigma_biguav_startups_20261126/uav_only_final_probe.json
+  raw_snapshot_sha256: 8cdd1414de4e0f587fe921e9cf6e884a18b272d756065d6741740063099a8634
+  max_receipt_age_s: 0.37727790000000017
   conversion: sigmainterface geo::llaToEnu and yaw_conv::ueDegToEnuRad, same as bridge
-  original_ugv_source: /home/cyz/hera_swarm_ws/artifacts/sigma_ugv_uav_startups_20261125/original_windows_scene.json
+  original_ugv_source: /home/cyz/hera_swarm_ws/artifacts/sigma_biguav_startups_20261126/original_windows_scene.json
+uav_snapshot_refresh:
+  captured_at_utc: '2026-11-26T06:49:43Z'
+  source: /home/cyz/hera_swarm_ws/artifacts/sigma_uav_motion_fix_20261126/initial_snapshot_retry/snapshot.json
+  method: query-only via corrected installed sigma2ros_bridge; no motion/takeoff/height
+    command publishers
+  model_info_altitude_unit: metres for current BigUAV model_type=0; legacy cm conversion
+    was incorrect
+  biguav_altitude_scale_m: 1.0
+  other_vehicle_entries: none

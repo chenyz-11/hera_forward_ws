@@ -1,0 +1,10 @@
+EntityId entity_id
+uint8 flags
+float32 vx
+float32 vy
+float32 vz
+float32 yaw
+float32 yaw_rate
+float32 ax
+float32 ay
+float32 az

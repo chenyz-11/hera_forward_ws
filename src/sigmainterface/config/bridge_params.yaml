@@ -1,0 +1,27 @@
+/**:
+  ros__parameters:
+    ue_ip: "192.168.31.243"          # UE 仿真地址
+    ue_port: 9990               # UE 仿真端口
+    local_port: 26530           # 本地 UDP 端口（26530 才能收 ORIGIN 广播）
+
+    # home 原点来源（home_source）：
+    #  ue  等待 UE 的 ORIGIN 广播建立原点，最多等 home_wait_ms，超时报错退出
+    # cfg  直接使用 home_lat_deg / home_lon_deg / home_alt_m（本地收不到 ORIGIN 广播时用）
+    home_source: "ue"           # home 来源：ue | cfg
+    home_wait_ms: 5000          # home_source=ue 时等待 ORIGIN 的超时（毫秒，必须 > 0）
+    home_lat_deg: 41.755        # home_source=cfg 时的 home 原点（度）
+    home_lon_deg: 73.5093       # home_source=cfg 时的 home 原点（度）
+    home_alt_m: 0.0             # home_source=cfg 时的 home 原点（米）
+    # 当前 SigmaPI5 BigUAV(type=0) MODEL_INFO 高度为米；旧 cm 版本可设 0.01。
+    biguav_altitude_scale_m: 1.0
+
+    namespace: "sigma"          # 话题树顶层命名空间；实体话题为
+                                # {namespace}/camp_{camp}/squad_{squad}/{型号}_{model}/...
+
+    pull_interval_ms: 100       # 上行拉取周期
+    pull_method: 1              # 拉取方式 1 = MODEL_NAME
+    pull_contents: "0_0_BigUGV_1"           # 逗号分隔拉取内容，如 "0_0_BTR82_33,1_0_BTR82_1"；空则不建拉取定时器。
+                                # 列出的实体同时会在启动时预开通其全部指令话题（motion/velocity/trajectory/weapon_fire）
+
+    loadout_timeout_ms: 300     # 载荷查询服务（{namespace}/loadout_query）总超时；无 WEAPON_SPEC 返回则 success=false
+    loadout_quiet_ms: 50        # 收到 WEAPON_SPEC 后静默该时长，视为该实体本批弹药收完

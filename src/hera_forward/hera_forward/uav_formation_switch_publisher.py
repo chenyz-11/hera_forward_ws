@@ -70,7 +70,11 @@ class UavFormationSwitchPublisher(Node):
         self.reference_speed_mps = pos('reference_speed_mps', 5.0)
         # Flight altitude for the trajectory (the config z ~=0.05 m is only the
         # ground spawn pose; UAV must climb to a cruise height to execute).
-        self.flight_height_m = nonnegative('flight_height_m', 10.0)
+        self.flight_height_m = nonnegative('flight_height_m', 5.0)
+        # Fixed-altitude mode: hold every trajectory point at flight_height_m
+        # instead of climbing from the ground spawn pose.  Position-controlled
+        # trajectories actively maintain z, so a constant altitude is stable.
+        self.fixed_altitude = bool(self.declare_parameter('fixed_altitude', True).value)
         self.publish_period_s = pos('publish_period_s', 3.0)
         self.initial_poses_yaml = self.declare_parameter(
             'initial_poses_yaml', INITIAL_POSES_YAML).value
@@ -126,10 +130,14 @@ class UavFormationSwitchPublisher(Node):
                 pose.header.stamp.sec, pose.header.stamp.nanosec = divmod(
                     stamp_ns + offset_ns, 1000000000)
                 pose.pose.position.x, pose.pose.position.y = float(x), float(y)
-                # Smooth climb from ground spawn to cruise altitude during form
-                # stage (quintic S so vertical speed is zero at both ends).
-                climb = dvs_quintic(min(1.0, k / climb_end_idx)) if climb_end_idx > 0 else 1.0
-                pose.pose.position.z = float(ground_z + (self.flight_height_m - ground_z) * climb)
+                if self.fixed_altitude:
+                    # Hold a constant cruise altitude for the whole trajectory.
+                    pose.pose.position.z = float(self.flight_height_m)
+                else:
+                    # Smooth climb from ground spawn to cruise altitude during
+                    # form stage (quintic S, zero vertical speed at both ends).
+                    climb = dvs_quintic(min(1.0, k / climb_end_idx)) if climb_end_idx > 0 else 1.0
+                    pose.pose.position.z = float(ground_z + (self.flight_height_m - ground_z) * climb)
                 pose.pose.orientation.w = 1.0      # ENU yaw 0 -> quat (0,0,0,1)
                 path.poses.append(pose)
             self.path_publishers[robot].publish(path)
@@ -138,7 +146,7 @@ class UavFormationSwitchPublisher(Node):
         self.get_logger().info(
             f'Published one continuous wide->column->wide UAV trajectory per vehicle: '
             f'distance={total:.0f}m duration={total/self.reference_speed_mps:.0f}s '
-            f'climb {init[1][2]:.3f}m->{self.flight_height_m:.1f}m slot_ids={slot_ids}')
+            f'{"fixed z=%.1fm"%self.flight_height_m if self.fixed_altitude else "climb %.3fm->%.1fm"%(init[1][2],self.flight_height_m)} slot_ids={slot_ids}')
         return True
 
     def tick(self):

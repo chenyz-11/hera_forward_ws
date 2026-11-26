@@ -1,0 +1,27 @@
+# 构建期现拉的 sdk 依赖，不入库
+sigma_sdk/
+docs/
+
+# 构建产物
+build/
+build_ros/
+
+# clangd 合并索引（CXX + ROS2 两模式条目，构建脚本再生）
+compile_commands.json
+
+# colcon 原地构建产物（若在包根直接跑 colcon build 会生成）
+install/
+log/
+__pycache__/
+
+# ctest 在错误目录（源码根）运行时的日志残留
+Testing/
+
+# IDE / 编辑器
+.vscode/
+.cache/
+.idea/
+cmake-build-*/
+.DS_Store
+.trae/
+

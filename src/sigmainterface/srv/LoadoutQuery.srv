@@ -1,0 +1,7 @@
+# 载荷查询：节点收到请求后向 UE 发 loadout_query，
+# 聚合该实体返回的多条 WEAPON_SPEC 后一次性应答
+EntityId entity_id
+---
+bool success            # 是否成功拿到应答
+string message          # 失败原因（timeout / 实体无效）
+Loadout loadout         # entity_id + 该实体全部弹药
