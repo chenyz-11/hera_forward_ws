@@ -1,5 +1,7 @@
 # sigma2ros\_bridge 功能自检命令
 
+原作者：https://gitee.com/beijing-daxiang-airlines/sigmainterface
+
 ## 0. 启动
 
 ```bash
